@@ -13,4 +13,4 @@ description = "a attribute macro to make struct's fields public"
 [dependencies]
 
 [lib]
-crate-type = ["proc-macro"]
+proc-macro = true
