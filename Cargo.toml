@@ -8,7 +8,7 @@ categories = ["rust-patterns"]
 license = "Apache-2.0"
 repository = "https://github.com/yuchunzhou/public"
 homepage = "https://github.com/yuchunzhou/public"
-description = "A crate to export struct fields to be public"
+description = "A macro to make struct's fields public"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

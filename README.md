@@ -1,4 +1,4 @@
-A crate to export struct fields to be public 
+A macro to make struct's fields public   
 ### How to use it?
 ```rust
 #[macro_use]
