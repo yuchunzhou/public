@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["yuchunzhou <chunzhou.yu@qq.com>"]
 edition = "2018"
 keywords = ["struct", "proc-macro-attribute"]
-license = "Apache License 2.0"
+license = "Apache-2.0"
 repository = "https://github.com/yuchunzhou/public"
 description = "a attribute macro to make struct's fields public"
 
