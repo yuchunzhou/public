@@ -1,5 +1,16 @@
-A macro to make struct's fields public   
+A crate used to make struct's fields public
+
 ### How to use it?
+
+add the dependency to your Cargo.toml
+
+```toml
+[dependencies]
+public = { git = "https://github.com/yuchunzhou/public", branch = "main" }
+```
+
+then, mark the struct with the `make_public` macro
+
 ```rust
 #[macro_use]
 extern crate public;
@@ -12,4 +23,5 @@ struct Foo {
     c: String,
 }
 ```
+
 the struct `Foo` and its fields will be accessible in current crate globally.
