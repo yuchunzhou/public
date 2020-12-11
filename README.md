@@ -1,4 +1,4 @@
-A crate used to make struct's fields public
+A crate used to make struct and its fields public
 
 ### How to use it?
 
@@ -15,7 +15,7 @@ then, mark the struct with the `make_public` macro
 #[macro_use]
 extern crate public;
 
-#[make_public(crate)]
+#[make_public]
 #[derive(Debug, Default)]
 struct Foo {
     a: i8,
@@ -24,4 +24,5 @@ struct Foo {
 }
 ```
 
-the struct `Foo` and its fields will be accessible in current crate globally.
+the struct `Foo` and its fields will be exported to the outside world, also you can limit the items' visibility within a
+given scope like the `pub` restrictions in Rust.
