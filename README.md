@@ -1,4 +1,4 @@
-A crate used to make struct/enum and its fields public
+A crate used to make struct/union and its fields public
 
 ### How to use it?
 

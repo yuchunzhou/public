@@ -8,7 +8,7 @@ categories = ["rust-patterns"]
 license = "Apache-2.0"
 repository = "https://github.com/yuchunzhou/public"
 homepage = "https://github.com/yuchunzhou/public"
-description = "A crate used to make struct/enum and its fields public"
+description = "A crate used to make struct/union and its fields public"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
