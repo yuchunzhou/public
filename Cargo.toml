@@ -1,6 +1,6 @@
 [package]
 name = "public"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["yuchunzhou <chunzhou.yu@qq.com>"]
 edition = "2018"
 keywords = ["struct", "proc-macro-attribute"]
@@ -8,7 +8,7 @@ categories = ["rust-patterns"]
 license = "Apache-2.0"
 repository = "https://github.com/yuchunzhou/public"
 homepage = "https://github.com/yuchunzhou/public"
-description = "A crate used to make struct/union and its fields public"
+description = "A macro used to make struct/union and its fields public"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
