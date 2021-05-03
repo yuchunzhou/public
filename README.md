@@ -1,6 +1,6 @@
 A macro used to make struct/union and its fields public
 
-### How to use it?
+### How to use
 
 add the dependency to your Cargo.toml
 
