@@ -1,6 +1,6 @@
 [package]
 name = "public"
-version = "0.1.6"
+version = "0.1.7"
 authors = ["yuchunzhou <chunzhou.yu@qq.com>"]
 edition = "2018"
 keywords = ["struct", "proc-macro-attribute"]

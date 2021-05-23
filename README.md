@@ -9,7 +9,7 @@ add the dependency to your Cargo.toml
 public = { git = "https://github.com/yuchunzhou/public", branch = "main" }
 ```
 
-then, mark the struct with the `make_public` macro
+then, mark the struct with `make_public` macro
 
 ```rust
 #[macro_use]
@@ -24,5 +24,5 @@ struct Foo {
 }
 ```
 
-the struct `Foo` and its fields will be exported to the outside world, also you can limit the items' visibility within a
-given scope like the `pub` restrictions in Rust.
+the struct `Foo` and its fields will be public, also you can limit the items' visibility within a
+given scope likes the `pub` restrictions in Rust.
