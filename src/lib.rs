@@ -1,29 +1,35 @@
 use proc_macro::{Delimiter, Group, Ident, Span, TokenStream, TokenTree};
 
 #[proc_macro_attribute]
-pub fn make_public(args: TokenStream, input: TokenStream) -> TokenStream {
-    let mut output = TokenStream::new();
-    let mut pub_token = TokenStream::from(TokenTree::from(Ident::new("pub", Span::call_site())));
-    if !args.clone().is_empty() {
+pub fn public(args: TokenStream, input: TokenStream) -> TokenStream {
+    let mut pub_token = TokenStream::from(TokenTree::Ident(Ident::new("pub", Span::call_site())));
+    if args.clone().is_empty() {
+        let crate_token = TokenStream::from(TokenTree::Ident(Ident::new("crate", Span::call_site())));
+        let scope_group = Group::new(Delimiter::Parenthesis, crate_token);
+        pub_token.extend(TokenStream::from(TokenTree::Group(scope_group)));
+    } else {
         let scope_group = Group::new(Delimiter::Parenthesis, args);
         pub_token.extend(TokenStream::from(TokenTree::Group(scope_group)));
     }
 
+    let mut output = TokenStream::new();
     let mut is_first_ident = true;
 
-    let input_iter = input.clone().into_iter();
-    for item in input_iter {
-        match item {
+    let token_stream_iter = input.clone().into_iter();
+    for token in token_stream_iter {
+        match token {
             TokenTree::Punct(p) => {
                 output.extend(TokenStream::from(TokenTree::Punct(p)));
             }
             TokenTree::Group(g) => match g.delimiter() {
                 Delimiter::Brace => {
+                    let group_token_stream_iter = g.stream().clone().into_iter();
+
                     let mut group_token = TokenStream::new();
-                    let group_iter = g.stream().clone().into_iter();
                     let mut is_identifier = true;
-                    for item in group_iter {
-                        match item {
+
+                    for token_ in group_token_stream_iter {
+                        match token_ {
                             TokenTree::Ident(i) => {
                                 if is_identifier {
                                     group_token.extend(pub_token.clone());
@@ -32,11 +38,11 @@ pub fn make_public(args: TokenStream, input: TokenStream) -> TokenStream {
                                 group_token.extend(TokenStream::from(TokenTree::Ident(i)));
                             }
                             TokenTree::Punct(p) => {
-                                group_token.extend(TokenStream::from(TokenTree::Punct(p.clone())));
                                 let p_str = &p.to_string();
                                 if p_str == "," {
                                     is_identifier = true;
                                 }
+                                group_token.extend(TokenStream::from(TokenTree::Punct(p)));
                             }
                             TokenTree::Literal(l) => {
                                 group_token.extend(TokenStream::from(TokenTree::Literal(l)))

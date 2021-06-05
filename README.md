@@ -1,4 +1,4 @@
-A macro used to make struct/union and its fields public
+A rust attribute macro used to make struct/union and its fields public
 
 ### How to use
 
@@ -9,13 +9,13 @@ add the dependency to your Cargo.toml
 public = { git = "https://github.com/yuchunzhou/public", branch = "main" }
 ```
 
-then, mark the struct with `make_public` macro
+then, mark the struct with `public` attribute macro
 
 ```rust
 #[macro_use]
 extern crate public;
 
-#[make_public]
+#[public]
 #[derive(Debug, Default)]
 struct Foo {
     a: i8,
@@ -24,5 +24,4 @@ struct Foo {
 }
 ```
 
-the struct `Foo` and its fields will be public, also you can limit the items' visibility within a
-given scope likes the `pub` restrictions in Rust.
+the struct `Foo` and its fields will be visible within the current crate, of cource, you can pass another scope argument to the `public` attribute macro, like the `pub` keyword in rust.
