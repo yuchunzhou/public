@@ -24,4 +24,4 @@ struct Foo {
 }
 ```
 
-the struct `Foo` and its fields will be visible within the current crate, of cource, you can pass another scope argument to the `public` attribute macro, like the `pub` keyword in rust.
+the struct `Foo` and its fields will be visible within the current crate, of course, you can pass another scope argument to the `public` attribute macro, like the `pub` keyword in rust.
