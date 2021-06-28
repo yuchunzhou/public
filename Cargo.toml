@@ -1,11 +1,11 @@
 [package]
 name = "public"
-version = "0.1.9"
+version = "0.2.0"
 authors = ["yuchunzhou <chunzhou.yu@qq.com>"]
 edition = "2018"
 keywords = ["struct", "proc-macro-attribute"]
 categories = ["rust-patterns"]
-license = "Apache-2.0"
+license = "GPL-2.0"
 repository = "https://github.com/yuchunzhou/public"
 homepage = "https://github.com/yuchunzhou/public"
 description = "A attribute macro used to make struct/union and its fields public"
